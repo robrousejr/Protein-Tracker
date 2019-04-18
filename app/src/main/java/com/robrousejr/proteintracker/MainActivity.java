@@ -1,5 +1,6 @@
 package com.robrousejr.proteintracker;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,6 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Get from the SharedPreferences
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("Day", -1);
+        int lastDay = settings.getInt("Day", -1);
+
+        // If day is different
+        if(getDayOfMonth() != lastDay)
+        {
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putInt("Day", getDayOfMonth()); // Saves day in editor
+            editor.apply(); // Apply the edits
+        }
 
 
     }
