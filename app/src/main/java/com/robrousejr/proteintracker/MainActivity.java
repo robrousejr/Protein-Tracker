@@ -13,9 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TODO: On launch, check day. If still current day, display current
-        // protein information, if midnight or after in next day, return to 0
-        
 
     }
 
