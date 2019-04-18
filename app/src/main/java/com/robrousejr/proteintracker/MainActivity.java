@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: On launch, check day. If still current day, display current
         // protein information, if midnight or after in next day, return to 0
-
+        
 
     }
 
