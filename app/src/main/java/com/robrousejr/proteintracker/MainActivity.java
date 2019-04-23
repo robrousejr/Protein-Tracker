@@ -14,19 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Get from the SharedPreferences
-        SharedPreferences settings = getApplicationContext().getSharedPreferences("Day", -1);
-        int lastDay = settings.getInt("Day", -1);
-
-        // If day is different
-        if(getDayOfMonth() != lastDay)
-        {
-            SharedPreferences.Editor editor = settings.edit();
-            editor.putInt("Day", getDayOfMonth()); // Saves day in editor
-            editor.apply(); // Apply the edits
-        }
-
-
     }
 
     // Returns integer of day of month
